@@ -1,4 +1,4 @@
-from tools import get_num
+from tools import get_num   #1
 
 print("Welcome to the calculator!" \
 "\n If you want to get started, type 'go' below." \
