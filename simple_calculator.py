@@ -20,15 +20,11 @@ while True:
                         second_num = get_num("Enter the second number.")                        
                         user_action = get_action() 
                                         
-                        while second_num == 0 and user_action in ("/", "divide"):
-                                while True:
-                                        try:
-                                                print("You cannot divide be zero." \
-                                                "\nEnter the second number.")
-                                                second_num = int(input("--- "))
-                                                break
-                                        except ValueError:
-                                                print("This is not a number! Please use digits.")
+                        while second_num == 0 and user_action in ("/", "divide"):                                                                        
+                                print("You cannot divide be zero.")
+                                second_num = get_num("Enter the second number.")
+                                break
+                                        
                                         
                         if user_action == "divide" or user_action == "/":
                                 print(f"Answer: {first_num / second_num}")
