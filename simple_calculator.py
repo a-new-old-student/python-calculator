@@ -1,4 +1,6 @@
-from tools import get_num   #1
+from tools import get_num
+from tools import get_action
+
 
 print("Welcome to the calculator!" \
 "\n If you want to get started, type 'go' below." \
@@ -15,21 +17,10 @@ while True:
                         "as well as the operations themselves.")
                 
                         first_num = get_num("Enter the first number.")
-                        second_num = get_num("Enter the second number.")
-
-
-                        print("Enter an action.")
-                        action = input("--- ")
-
-                                
-                        while action not in ("divide", "/", "plus", "+", "subtract", "-", "multiply", "*", "degree", "**"):
-                                print("Please enter the correct action.")
-                                action = input("--- ")
-
-
-                                
+                        second_num = get_num("Enter the second number.")                        
+                        user_action = get_action() 
                                         
-                        while second_num == 0 and action in ("/", "divide"):
+                        while second_num == 0 and user_action in ("/", "divide"):
                                 while True:
                                         try:
                                                 print("You cannot divide be zero." \
@@ -39,21 +30,18 @@ while True:
                                         except ValueError:
                                                 print("This is not a number! Please use digits.")
                                         
-                                
-
-
-                        if action == "divide" or action == "/":
+                        if user_action == "divide" or user_action == "/":
                                 print(f"Answer: {first_num / second_num}")
                         
-                        elif action == "plus" or action == "+":
+                        elif user_action == "plus" or user_action == "+":
                                 print(f"Answer: {first_num + second_num}")
                         
-                        elif action == "subtract" or action == "-":
+                        elif user_action == "subtract" or user_action == "-":
                                 print(f"Answer: {first_num - second_num}")
                         
-                        elif action == "multiply" or action == "*":
+                        elif user_action == "multiply" or user_action == "*":
                                 print(f"Answer: {first_num * second_num}")
-                        elif action == "degree" or action == "**":
+                        elif user_action == "degree" or user_action == "**":
                                 print(f"Answer: {first_num ** second_num}")
 
                         print("Shall we carry on?")
