@@ -17,41 +17,48 @@ while True:
                         "as well as the operations themselves.")
                 
                         first_num = get_num("Enter the first number.")
-                        second_num = get_num("Enter the second number.")                        
-                        user_action = get_action() 
+                        user_action = get_action()
+                        if user_action == "factorial" or user_action == "!":
+                                number = 1
+                                for i in range(1, first_num + 1):
+                                        number *= i
+                                print(number)
+                                
+                        else:
+                                second_num = get_num("Enter the second number.")                        
+                                                
+                                while second_num == 0 and user_action in ("/", "divide"):                                                                        
+                                        print("You cannot divide be zero.")
+                                        second_num = get_num("Enter the second number.")
                                         
-                        while second_num == 0 and user_action in ("/", "divide"):                                                                        
-                                print("You cannot divide be zero.")
-                                second_num = get_num("Enter the second number.")
-                                break
-                                        
-                                        
-                        if user_action == "divide" or user_action == "/":
-                                print(f"Answer: {first_num / second_num}")
-                        
-                        elif user_action == "plus" or user_action == "+":
-                                print(f"Answer: {first_num + second_num}")
-                        
-                        elif user_action == "subtract" or user_action == "-":
-                                print(f"Answer: {first_num - second_num}")
-                        
-                        elif user_action == "multiply" or user_action == "*":
-                                print(f"Answer: {first_num * second_num}")
-                        elif user_action == "degree" or user_action == "**":
-                                print(f"Answer: {first_num ** second_num}")
+                                                
+                                                
+                                if user_action == "divide" or user_action == "/":
+                                        print(f"Answer: {first_num / second_num}")
+                                
+                                elif user_action == "plus" or user_action == "+":
+                                        print(f"Answer: {first_num + second_num}")
+                                
+                                elif user_action == "subtract" or user_action == "-":
+                                        print(f"Answer: {first_num - second_num}")
+                                
+                                elif user_action == "multiply" or user_action == "*":
+                                        print(f"Answer: {first_num * second_num}")
+                                elif user_action == "degree" or user_action == "**":
+                                        print(f"Answer: {first_num ** second_num}")
 
-                        print("Shall we carry on?")
-                        user_input_calcul = input("--- ")
-                
-                        while user_input_calcul not in ("yes", "no"):
-                                print("I don't understand." \
-                                "\nShall we carry on?")
+                                print("Shall we carry on?")
                                 user_input_calcul = input("--- ")
-                
-                        if user_input_calcul == "yes":
-                                continue
-                        elif user_input_calcul == "no":
-                                break
+                                
+                                while user_input_calcul not in ("yes", "no"):
+                                        print("I don't understand." \
+                                        "\nShall we carry on?")
+                                        user_input_calcul = input("--- ")
+                                
+                                if user_input_calcul == "yes":
+                                                continue
+                                elif user_input_calcul == "no":
+                                                break
 
         elif user_input_menu == "exit":
                 break
