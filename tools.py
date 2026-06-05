@@ -12,12 +12,12 @@ def get_num(prompt):
 
 def get_action():
     print("Enter an action.")
-    action = input("--- ")
+    action = input("--- ").strip().lower()
 
     while action not in ("divide", "/", "plus", "+", "subtract", "-", "multiply", "*", "degree", "**", 
                          "factorial", "!"):
         print("Please enter the correct action.")
-        action = input("--- ")
+        action = input("--- ").strip().lower()
         
     return action
 
