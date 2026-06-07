@@ -5,10 +5,12 @@ from instruction import user_instruction
 
 print(
     "Welcome to the calculator!"
-    "\n\nThere are four options available in the menu:"
+    "\n\nThere are five options available in the menu:"
     "\nTo start using the calculator, type 'go'."
     "\nTo view calculation history, type 'history'."
     "\nTo view detailed instructions, type 'instruction'."
+    "\nTo display a multiplication table, type 'multiplication table'"
+    "\nTo display a power table, type 'power table'"
     "\nTo exit the program, type 'exit'."
 )
       
@@ -18,7 +20,25 @@ while True:
         print("|menu|")
         user_input_menu = input("--- ").strip().lower()
 
-        if user_input_menu == "history":
+        if user_input_menu == "multiplication table":
+                number_mult_table = get_num("Enter a number.")
+
+                num = 1
+
+                for i in range(1, 11):
+                        num = i * number_mult_table
+                        print(f"{number_mult_table} * {i} = {num}")
+        elif user_input_menu == "power table":
+                number__power_table = get_num("Enter a number.")
+
+                num = 1
+
+                for i in range(1, 11):
+                        num = i ** number__power_table
+                        print(f"{number__power_table}^{i} = {num}")
+                        
+
+        elif user_input_menu == "history":
                 print("\n--- Calculator History ---")
                 for record in calculator_history:
                         print(record)
@@ -37,6 +57,8 @@ while True:
                         user_action = get_action()
 
                         if user_action in ("factorial", "!"):
+                                while first_num < 0:
+                                        first_num = get_num("Enter a positive number.")
                                 number = 1
                                 for i in range(1, first_num + 1):
                                         number *= i
