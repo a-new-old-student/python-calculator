@@ -1,5 +1,12 @@
-from tools import get_num
-from tools import get_action
+from tools import (
+        get_num,
+        get_action,
+        add,
+        subtract,
+        multiply,
+        divide,
+        power
+)
 from instruction import user_instruction
 
 
@@ -23,26 +30,25 @@ while True:
         if user_input_menu == "multiplication table":
                 number_mult_table = get_num("Enter a number.")
 
-                num = 1
-
                 for i in range(1, 11):
                         num = i * number_mult_table
                         print(f"{number_mult_table} * {i} = {num}")
         elif user_input_menu == "power table":
                 number__power_table = get_num("Enter a number.")
 
-                num = 1
-
                 for i in range(1, 11):
-                        num = i ** number__power_table
+                        num = number__power_table ** i 
                         print(f"{number__power_table}^{i} = {num}")
                         
 
         elif user_input_menu == "history":
-                print("\n--- Calculator History ---")
-                for record in calculator_history:
-                        print(record)
-                print("--------------------------\n")
+                if not calculator_history:
+                        print("History is empty.")
+                else:
+                        print("\n--- Calculator History ---")
+                        for record in calculator_history:
+                                print(record)
+                        print("--------------------------\n")
                 
         elif user_input_menu == "instruction":
                 print(user_instruction)
@@ -76,32 +82,32 @@ while True:
                                                 
                                                 
                                 if user_action in ("divide", "/"):
-                                        answer = first_num / second_num
+                                        answer = divide(first_num, second_num)
                                         answer_history = (f"{first_num} / {second_num} = {answer}")
                                         print(answer_history)
                                         calculator_history.append(answer_history)
                                 
                                 elif user_action in ("plus", "+"):
-                                        answer = first_num + second_num
+                                        answer = add(first_num, second_num)
                                         answer_history = (f"{first_num} + {second_num} = {answer}")
                                         print(answer_history)
                                         calculator_history.append(answer_history)
 
                                 
                                 elif user_action in ("subtract", "-"):
-                                        answer = first_num - second_num
+                                        answer = subtract(first_num, second_num)
                                         answer_history = (f"{first_num} - {second_num} = {answer}")
                                         print(answer_history)
                                         calculator_history.append(answer_history)
                                 
                                 elif user_action in ("multiply", "*"):
-                                        answer = first_num * second_num
+                                        answer = multiply(first_num, second_num)
                                         answer_history = (f"{first_num} * {second_num} = {answer}")
                                         print(answer_history)
                                         calculator_history.append(answer_history)
 
                                 elif user_action in ("degree", "**", "^"):
-                                        answer = first_num ** second_num
+                                        answer = power(first_num, second_num)
                                         answer_history = (f"{first_num}^{second_num} = {answer}")
                                         print(answer_history)
                                         calculator_history.append(answer_history)
