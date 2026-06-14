@@ -34,11 +34,11 @@ while True:
                         num = i * number_mult_table
                         print(f"{number_mult_table} * {i} = {num}")
         elif user_input_menu == "power table":
-                number__power_table = get_num("Enter a number.")
+                number_power_table = get_num("Enter a number.")
 
                 for i in range(1, 11):
-                        num = number__power_table ** i 
-                        print(f"{number__power_table}^{i} = {num}")
+                        num = number_power_table ** i 
+                        print(f"{number_power_table}^{i} = {num}")
                         
 
         elif user_input_menu == "history":
@@ -73,6 +73,8 @@ while True:
                                 calculator_history.append(answer_history)
                         else:
                         
+                                
+
                                 second_num = get_num("Enter the second number.")                        
                                                 
                                 while second_num == 0 and user_action in ("/", "divide"):                                                                        
@@ -85,32 +87,36 @@ while True:
                                         answer = divide(first_num, second_num)
                                         answer_history = (f"{first_num} / {second_num} = {answer}")
                                         print(answer_history)
-                                        calculator_history.append(answer_history)
+                                        
                                 
                                 elif user_action in ("plus", "+"):
                                         answer = add(first_num, second_num)
                                         answer_history = (f"{first_num} + {second_num} = {answer}")
                                         print(answer_history)
-                                        calculator_history.append(answer_history)
+                                        
 
                                 
                                 elif user_action in ("subtract", "-"):
                                         answer = subtract(first_num, second_num)
                                         answer_history = (f"{first_num} - {second_num} = {answer}")
                                         print(answer_history)
-                                        calculator_history.append(answer_history)
+                                        
                                 
                                 elif user_action in ("multiply", "*"):
                                         answer = multiply(first_num, second_num)
                                         answer_history = (f"{first_num} * {second_num} = {answer}")
                                         print(answer_history)
-                                        calculator_history.append(answer_history)
+                                        
 
                                 elif user_action in ("degree", "**", "^"):
                                         answer = power(first_num, second_num)
                                         answer_history = (f"{first_num}^{second_num} = {answer}")
                                         print(answer_history)
-                                        calculator_history.append(answer_history)
+                                        
+
+                                
+
+                                calculator_history.append(answer_history)
 
 
                         print("Shall we carry on?")
