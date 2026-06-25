@@ -8,6 +8,7 @@ from tools import (
         power
 )
 from instruction import user_instruction
+import time
 
 
 print(
@@ -133,6 +134,8 @@ while True:
                                         break
 
         elif user_input_menu == "exit":
+                print("Goodbye!")
+                time.sleep(2)
                 break
         else:
                 print("I don't understand.")
